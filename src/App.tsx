@@ -1,11 +1,13 @@
 import React from 'react';
 
-import {Counter} from './features/counter/Counter';
+import {AddCity} from "./app/components/AddCity";
+import {City} from "./app/components/City";
 
 function App() {
     return (
         <>
-            <Counter/>
+            <AddCity/>
+            <City />
         </>
     );
 }
