@@ -13,7 +13,7 @@ export const AddCity = (): JSX.Element => {
     }
 
     return (
-        <>
+        <form action="">
             <input
                 type="text"
                 value={city}
@@ -23,6 +23,6 @@ export const AddCity = (): JSX.Element => {
                 disabled={!city}
                 onClick={cityHandler}>Check
             </button>
-        </>
+        </form>
     )
 }
