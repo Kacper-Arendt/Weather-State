@@ -1,25 +1,25 @@
 import {createSlice, nanoid, PayloadAction} from "@reduxjs/toolkit";
 
-interface City {
+export interface ICity {
     id: string,
     name: string,
 }
 
-const initialState = [] as City[]
+const initialState = [] as ICity[]
 
 export const citySlice = createSlice({
     name: 'city',
     initialState,
     reducers: {
         addCity: {
-            reducer: (state, action: PayloadAction<City>) => {
+            reducer: (state, action: PayloadAction<ICity>) => {
                 state.push(action.payload);
             },
             prepare: (name: string) => ({
                 payload: {
                     id: nanoid(),
                     name,
-                } as City
+                } as ICity
             }),
         },
         removeCity(state, action) {
@@ -30,4 +30,5 @@ export const citySlice = createSlice({
 });
 
 export const {addCity, removeCity} = citySlice.actions;
+
 export default citySlice.reducer;
