@@ -1,7 +1,9 @@
 import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components'
+
 import {AddCity} from "./app/components/AddCity";
 import {Cities} from "./app/components/Cities";
+import { device } from './app/Models/MediaQueries';
 import background from './images/background.jpg';
 
 const GlobalStyle = createGlobalStyle`
@@ -25,7 +27,6 @@ const GlobalStyle = createGlobalStyle`
     background-size: cover;
   }
 `
-
 
 const Header = styled.header`
   display: flex;

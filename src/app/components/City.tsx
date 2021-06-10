@@ -5,6 +5,7 @@ import {AiFillDelete, AiOutlineDelete} from "react-icons/ai";
 
 import {removeCity, AddFetchedData} from '../../redux/city/citySlice'
 import {IFetchedApiData, IProps} from '../Models/City'
+import {device} from '../Models/MediaQueries'
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,6 +15,11 @@ const Wrapper = styled.div`
   border: solid black 2px;
   background-color: RGBA(217, 190, 180, 0.8);
   font-size: 15px;
+
+@media${device.mobileM} {
+  width: 330px;
+  font-size: 17px;
+}
 `
 
 const Header = styled.header`
@@ -27,10 +33,15 @@ const Header = styled.header`
 
   img {
     width: 40px;
-    margin-left: -20px;
   }
-`
 
+@media${device.mobileM} {
+  img {
+    margin-right: 100px;
+    width: 45px;
+  }
+}
+`
 
 const WeatherData = styled.div`
   width: 100%;
