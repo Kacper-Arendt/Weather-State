@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8477c59f-a42a-4e75-bf8a-bf28a0360b84" name="Default Changelist" comment="" />
+    <list default="true" id="8477c59f-a42a-4e75-bf8a-bf28a0360b84" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Cities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Cities.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/City.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/City.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +37,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -54,6 +59,9 @@
       <updated>1623138756164</updated>
       <workItem from="1623138763017" duration="13434000" />
       <workItem from="1623217187355" duration="15974000" />
+      <workItem from="1623302781196" duration="62000" />
+      <workItem from="1623302860250" duration="54000" />
+      <workItem from="1623302930980" duration="1499000" />
     </task>
     <servers />
   </component>

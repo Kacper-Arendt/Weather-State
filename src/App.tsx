@@ -6,9 +6,11 @@ import {Cities} from "./app/components/Cities";
 function App() {
     return (
         <>
+            <h1>Weather State</h1>
             <AddCity/>
             <Cities />
         </>
+
     );
 }
 
