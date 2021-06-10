@@ -25,19 +25,28 @@ const GlobalStyle = createGlobalStyle`
     background-size: cover;
   }
 `
+
+
+const Header = styled.header`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+`
 const H1 = styled.h1`
   font-size: 18px;
   letter-spacing: 1px;
-  padding: 5px;
-  border-bottom: 2px solid black;
+  padding: 5px 0 2px 7px;
 `
 
 function App() {
     return (
         <>
             <GlobalStyle/>
-            <H1>Weather State</H1>
-            <AddCity/>
+            <Header>
+                <H1>Weather<br/> State</H1>
+                <AddCity/>
+            </Header>
             <Cities/>
         </>
     );
