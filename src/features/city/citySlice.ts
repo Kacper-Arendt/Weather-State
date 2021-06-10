@@ -1,9 +1,5 @@
 import {createSlice, nanoid, PayloadAction} from "@reduxjs/toolkit";
-
-export interface ICity {
-    id: string,
-    name: string,
-}
+import {ICity} from "../../app/Models/City";
 
 const initialState = [] as ICity[]
 
