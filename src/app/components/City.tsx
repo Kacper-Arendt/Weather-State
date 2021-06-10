@@ -3,6 +3,8 @@ import {removeCity} from "../../features/city/citySlice";
 import {useAppDispatch} from "../hooks";
 import styled from "styled-components";
 
+import {IFetchedApiData, IProps} from '../Models/City'
+
 const Div = styled.div`
   margin: 30px;
   padding: 10px;
@@ -10,36 +12,8 @@ const Div = styled.div`
   border: solid black 2px;
 `
 
-export interface Props {
-    id: string,
-    name: string,
-}
 
-export interface IMainWeatherStats {
-    feels_like: number,
-    humidity: number,
-    pressure: number,
-    temp: number,
-    temp_max: number,
-    temp_min: number,
-}
-
-export interface IFetchedApiData {
-    base: string,
-    clouds: {},
-    cod: number,
-    coord: {},
-    dt: number,
-    id: number,
-    main: IMainWeatherStats
-    name: string,
-    sys: {},
-    weather: [{ description: string, humidity: string, icon: string }],
-    wind: { speed: number }
-}
-
-
-export const City = (props: Props) => {
+export const City = (props: IProps) => {
     const dispatch = useAppDispatch();
     const [apiData, setApiData] = useState<IFetchedApiData>();
     const [error, setError] = useState();
@@ -51,7 +25,6 @@ export const City = (props: Props) => {
     const removeCityHandler = (id: string): void => {
         dispatch(removeCity(id))
     }
-
 
     useEffect(() => {
         fetch(apiUrl)
