@@ -34,7 +34,7 @@ export interface IFetchedApiData {
     main: IMainWeatherStats
     name: string,
     sys: {},
-    weather: [ {description: string, humidity: string} ],
+    weather: [{ description: string, humidity: string, icon: string }],
     wind: { speed: number }
 }
 
@@ -45,13 +45,13 @@ export const City = (props: Props) => {
     const [error, setError] = useState();
 
     const apiKey = process.env["REACT_APP_API_KEY"];
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.name}&appid=${apiKey}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.name}&units=metric&appid=${apiKey}`;
+    const icon = `http://openweathermap.org/img/wn/${apiData?.weather[0].icon}.png`
 
     const removeCityHandler = (id: string): void => {
         dispatch(removeCity(id))
     }
 
-    const kelvin
 
     useEffect(() => {
         fetch(apiUrl)
@@ -68,23 +68,25 @@ export const City = (props: Props) => {
                 console.log(error)
             });
     }, [apiUrl])
-    console.log(apiData)
 
     const fetchedData = () => {
-            if (!error && apiData) {
-                return (
-                    <Div>
-                        <h2>{apiData.name}</h2>
-                        <p>Temp: {apiData.main.temp}</p>
-                        <p>Pressure: {apiData.main.temp}</p>
-                        <p>Humidity: {apiData.main.humidity}</p>
-                        <p>Wind: {apiData.wind.speed} km/h</p>
+        if (!error && apiData) {
+            return (
+                <Div>
+                    <h2>{apiData.name}</h2>
+                    <p>Temp: {`${apiData.main.temp} °C`}</p>
+                    <p>Wind: {apiData.wind.speed} m/s</p>
+                    <p>Pressure: {`${apiData.main.pressure}  HPa`}</p>
+                    <p>Humidity: {`${apiData.main.humidity}%`}</p>
+                    <div>
+                        <img src={icon} alt="weather icon"/>
                         <p>Info: {apiData.weather[0].description} </p>
-                        <button onClick={() => removeCityHandler(props.id)}>X</button>
-                    </Div>
-                )
-            }
+                    </div>
+                    <button onClick={() => removeCityHandler(props.id)}>X</button>
+                </Div>
+            )
         }
+    }
 
     return (
         <>
