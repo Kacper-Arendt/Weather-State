@@ -6,30 +6,43 @@ import {addCity} from "../../redux/city/citySlice";
 
 const Form = styled.form`
   display: flex;
-  justify-content: center;
-  margin: 10px;
-  padding: 5px;
+  flex-direction: row;
+  justify-content: right;
+  margin: 8px;
+  padding: 2px;
 `
 
 const Input = styled.input`
-  width: 100px;
-  margin: 0 10px;
   font-size: 15px;
-  padding: 1px;
-  border: black solid 2px;
-  border-radius: 7%;
-  background-color: #FBC926;
-  color: white;
+  padding: 2px;
+  border: 1px solid black;
+  background-color: RGBA(251, 201, 38, 0.6);
+  max-width: 110px;
   
   &:focus{
-    background-color: #A69D1Fs;
-  }
-  
-  ::placeholder{
-    
+    background-color: RGBA(251, 201, 38, 0.9);
+    outline: none;
   }
 `
 
+const Button = styled.button `
+  margin-right: 5px;
+  padding: 2px 5px;
+  border: 1px solid black;
+  background-color: RGBA(251, 201, 38, 0.6);
+  color: black;
+  font-weight: bold;
+  
+  :active{
+    background-color: RGBA(251, 201, 38, 0.9);
+    transform: translateX(4px);
+  }
+
+  :disabled{
+    color: grey;
+    background-color: RGBA(251, 201, 38, 0.3);
+  }
+`
 
 export const AddCity = (): JSX.Element => {
     const [city, setCity] = useState('');
@@ -48,10 +61,10 @@ export const AddCity = (): JSX.Element => {
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
             />
-            <button
+            <Button
                 disabled={!city}
                 onClick={cityHandler}>Check
-            </button>
+            </Button>
         </Form>
     )
 }
