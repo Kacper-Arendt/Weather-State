@@ -26,7 +26,7 @@ const Input = styled.input`
 `
 
 const Button = styled.button `
-  margin-right: 5px;
+  margin-right: 15px;
   padding: 2px 5px;
   border: 1px solid black;
   background-color: RGBA(251, 201, 38, 0.6);
@@ -37,7 +37,6 @@ const Button = styled.button `
     background-color: RGBA(251, 201, 38, 0.9);
     transform: translateX(4px);
   }
-
   :disabled{
     color: grey;
     background-color: RGBA(251, 201, 38, 0.3);

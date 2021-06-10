@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8477c59f-a42a-4e75-bf8a-bf28a0360b84" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/AddCity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/AddCity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/City.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/City.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +25,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1teo8QbpMHK0tlRa0nevaeF1DMR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -69,7 +70,7 @@
       <workItem from="1623217187355" duration="15974000" />
       <workItem from="1623302781196" duration="62000" />
       <workItem from="1623302860250" duration="54000" />
-      <workItem from="1623302930980" duration="12167000" />
+      <workItem from="1623302930980" duration="24456000" />
     </task>
     <servers />
   </component>
