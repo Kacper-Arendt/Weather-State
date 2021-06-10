@@ -11,10 +11,10 @@ export const citySlice = createSlice({
             reducer: (state, action: PayloadAction<ICity>) => {
                 state.push(action.payload);
             },
-            prepare: (name: string) => ({
+            prepare: (searchedCity: string) => ({
                 payload: {
                     id: nanoid(),
-                    name,
+                    searchedCity,
                 } as ICity
             }),
         },

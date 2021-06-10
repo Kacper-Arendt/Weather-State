@@ -11,7 +11,7 @@ export const Cities = () => {
                 <City
                     key = {city.id}
                     id = {city.id}
-                    name = {city.name}
+                    name = {city.searchedCity}
                 />
             )}
         </>
