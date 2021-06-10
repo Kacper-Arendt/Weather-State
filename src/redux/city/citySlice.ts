@@ -1,5 +1,5 @@
 import {createSlice, nanoid, PayloadAction} from "@reduxjs/toolkit";
-import {ICity} from "../../app/Models/City";
+import {ICity, IFetchedApiData} from "../../app/Models/City";
 
 const initialState = [] as ICity[]
 
@@ -18,13 +18,16 @@ export const citySlice = createSlice({
                 } as ICity
             }),
         },
-        removeCity(state, action) {
+        removeCity(state, action: PayloadAction<string>) {
             const index = state.findIndex((city) => city.id === action.payload);
             state.splice(index, 1);
         },
+        AddFetchedData(state, action: PayloadAction<IFetchedApiData>) {
+            state.findIndex((city) => city.fetchedData = action.payload)
+        }
     },
 });
 
-export const {addCity, removeCity} = citySlice.actions;
+export const {addCity, removeCity, AddFetchedData} = citySlice.actions;
 
 export default citySlice.reducer;

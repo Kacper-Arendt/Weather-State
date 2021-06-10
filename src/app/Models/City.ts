@@ -1,8 +1,8 @@
 
 export interface ICity {
     id: string,
-    name: string,
-    fetchedData?: IFetchedApiData
+    searchedCity: string,
+    fetchedData: IFetchedApiData
 }
 
 export interface IProps {

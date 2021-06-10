@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import {removeCity} from "../../features/city/citySlice";
 import {useAppDispatch} from "../hooks";
 import styled from "styled-components";
 
+import {removeCity, AddFetchedData} from '../../redux/city/citySlice'
 import {IFetchedApiData, IProps} from '../Models/City'
 
 const Div = styled.div`
@@ -11,7 +11,6 @@ const Div = styled.div`
   width: 200px;
   border: solid black 2px;
 `
-
 
 export const City = (props: IProps) => {
     const dispatch = useAppDispatch();
@@ -35,7 +34,7 @@ export const City = (props: IProps) => {
                     return;
                 } else
                     setApiData(data)
-
+                dispatch(AddFetchedData(data))
             })
             .catch((error) => {
                 console.log(error)
