@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useAppDispatch} from "../hooks";
-import {addCity} from "../../features/city/citySlice";
+import {addCity} from "../../redux/city/citySlice";
 
 export const AddCity = (): JSX.Element => {
     const [city, setCity] = useState('');
