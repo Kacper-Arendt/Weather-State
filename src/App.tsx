@@ -32,16 +32,14 @@ const Header = styled.header`
   display: grid;
   grid-template-rows: 1;
   grid-template-columns: 1fr 1fr;
-  align-content: center;
   align-items: center;
   border-bottom: 2px solid black;
-  background-color: rgba( 136, 140, 140, .6);
-  
-  
-  @media${device.laptop}{
+  background-color: rgba(136, 140, 140, .6);
+@media${device.tablet} {
   border-width: 4px;
+} @media${device.laptop} {
+  grid-template-columns: 1fr 2fr;
 }
-  
 `
 const H1 = styled.h1`
   font-size: 18px;
@@ -51,8 +49,6 @@ const H1 = styled.h1`
 
 @media${device.tablet} {
   font-size: 30px;
-} @media${device.laptop} {
-  font-size: 35px;
 }
 `
 

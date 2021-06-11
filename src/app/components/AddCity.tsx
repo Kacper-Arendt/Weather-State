@@ -1,34 +1,45 @@
 import React, {useState} from "react";
 import styled from 'styled-components'
-import { FaSearch } from "react-icons/fa";
+import {FaSearch} from "react-icons/fa";
 
 import {useAppDispatch} from "../hooks";
 import {addCity} from "../../redux/city/citySlice";
 import {device} from '../Models/MediaQueries'
 
 const Form = styled.form`
-  justify-self: end;
   display: flex;
   flex-direction: row;
   height: 32px;
+  justify-self: end;
   margin-right: 15px;
-  
-  @media${device.mobileM} {
+  font-size: 20px;
+
+@media${device.mobileM} {
+  width: 200px;
+} @media${device.tablet} {
+  width: 300px;
+  height: 45px;
+} @media${device.laptop} {
+  width: 500px;
+  height: 50px;
+} @media${device.laptop} {
+  justify-self: left;
 }
 `
 
 const Input = styled.input`
-  width: 100px;
+  width: 75%;
   height: 100%;
   border-radius: 30px 0 0 30px;
   border: 0;
   outline: 0;
   background-color: #353b48;
   color: white;
-  padding: 3px 0 3px 15px;
-  font-size: 13px;
+  padding: 5px 0 5px 15px;
+  font-size: inherit;
   font-weight: 600;
   letter-spacing: .07em;
+  cursor: pointer;
 `
 
 const Button = styled.button`
@@ -40,14 +51,17 @@ const Button = styled.button`
   border-radius: 0 30px 30px 0;
   background-color: #353b48;
   color: white;
-  font-size: 13px;
+  font-size: inherit;
   font-weight: 600;
-  letter-spacing: .08em;
   cursor: pointer;
-  
-  :disabled{
+
+  :disabled {
     color: grey;
   }
+  
+  @media${device.laptop}{
+  border-left: none;
+}
 `
 
 export const AddCity = (): JSX.Element => {
