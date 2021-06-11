@@ -8,10 +8,15 @@ import {device} from '../Models/MediaQueries'
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
 
 @media${device.mobileM} {
   margin-top: 40px;
+}
+@media${device.laptopL}{
+  flex-direction: row;
 }
 `
 

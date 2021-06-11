@@ -3,26 +3,37 @@ import styled from 'styled-components'
 
 import {useAppDispatch} from "../hooks";
 import {addCity} from "../../redux/city/citySlice";
+import {device} from '../Models/MediaQueries'
 
 const Form = styled.form`
   display: flex;
   flex-direction: row;
-  justify-content: right;
-  margin: 8px;
-  padding: 2px;
+  align-self: center;
+  
+  @media${device.laptop} {
+  height: 45px;
+}
 `
 
 const Input = styled.input`
   font-size: 15px;
-  padding: 2px;
   border: 1px solid black;
   background-color: RGBA(251, 201, 38, 0.6);
   max-width: 110px;
+  padding: 10px;
   
   &:focus{
     background-color: RGBA(251, 201, 38, 0.9);
     outline: none;
   }
+  
+  @media${device.tablet}{
+  max-width: 200px;
+  font-size: 28px;
+}
+  @device${device.laptop} {
+  border-width: 3px;
+}
 `
 
 const Button = styled.button `
@@ -41,6 +52,13 @@ const Button = styled.button `
     color: grey;
     background-color: RGBA(251, 201, 38, 0.3);
   }
+  
+  @media${device.tablet}{
+  font-size: 25px;
+}
+@device${device.laptop} {
+  border-width: 3px;
+}
 `
 
 export const AddCity = (): JSX.Element => {
