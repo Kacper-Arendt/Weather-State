@@ -13,8 +13,17 @@ const Wrapper = styled.div`
   width: 220px;
   margin: 20px;
   border: solid black 2px;
-  background-color: RGBA(217, 190, 180, 0.8);
+  background-color: rgba(53, 59, 72, .9);
+  color: white;
   font-size: 15px;
+  transition: all .2s ease-in-out;
+  
+  :hover{
+    button{
+      visibility: visible;
+    }
+    transform: scale(1.01);
+  }
 
 @media${device.mobileM} {
   width: 300px;
@@ -23,10 +32,8 @@ const Wrapper = styled.div`
   width: 550px;
   font-size: 21px;
   margin-bottom: 40px;
-}@media${device.laptop}{
-  width: 700px;
-}
-@media${device.laptopL}{
+  border-width: 3px;
+}  @media${device.laptopL} {
   width: 550px;
 }
 `
@@ -39,10 +46,11 @@ const Header = styled.header`
   align-content: center;
   align-items: center;
   width: 100%;
-  background-color: rgba(115, 86, 76, .8);
+  background-color: rgba(157,118,61,0.8);
 
   h2 {
     margin: 0 5px;
+    padding-left: 10px;
   }
 
   img {
@@ -58,12 +66,13 @@ const Header = styled.header`
   img {
     width: 65px;
   }
-}}
+}
+}
 `
 
 const WeatherData = styled.div`
   width: 100%;
-  padding: 10px 0 0 10px;
+  padding: 10px 0 10px 15px;
 
   p {
     letter-spacing: 1px;
@@ -72,6 +81,7 @@ const WeatherData = styled.div`
 `
 
 const Button = styled.button`
+  visibility: hidden;
   justify-self: center;
   padding: 2px 2px;
   width: 50px;
@@ -80,7 +90,9 @@ const Button = styled.button`
   background-color: white;
   transition: all 0.5s;
   font-size: 3vh;
-  
+  webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0.2s, opacity 0.5s linear;
+
   :hover {
     text-shadow: 0 0 2em rgba(255, 255, 255, 1);
     background-color: #D93030;
