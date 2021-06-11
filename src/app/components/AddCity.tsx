@@ -1,64 +1,53 @@
 import React, {useState} from "react";
 import styled from 'styled-components'
+import { FaSearch } from "react-icons/fa";
 
 import {useAppDispatch} from "../hooks";
 import {addCity} from "../../redux/city/citySlice";
 import {device} from '../Models/MediaQueries'
 
 const Form = styled.form`
+  justify-self: end;
   display: flex;
   flex-direction: row;
-  align-self: center;
+  height: 32px;
+  margin-right: 15px;
   
-  @media${device.laptop} {
-  height: 45px;
+  @media${device.mobileM} {
 }
 `
 
 const Input = styled.input`
-  font-size: 15px;
-  border: 1px solid black;
-  background-color: RGBA(251, 201, 38, 0.6);
-  max-width: 110px;
-  padding: 10px;
-  
-  &:focus{
-    background-color: RGBA(251, 201, 38, 0.9);
-    outline: none;
-  }
-  
-  @media${device.tablet}{
-  max-width: 200px;
-  font-size: 28px;
-}
-  @device${device.laptop} {
-  border-width: 3px;
-}
+  width: 100px;
+  height: 100%;
+  border-radius: 30px 0 0 30px;
+  border: 0;
+  outline: 0;
+  background-color: #353b48;
+  color: white;
+  padding: 3px 0 3px 15px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .07em;
 `
 
-const Button = styled.button `
-  margin-right: 15px;
-  padding: 2px 5px;
-  border: 1px solid black;
-  background-color: RGBA(251, 201, 38, 0.6);
-  color: black;
-  font-weight: bold;
+const Button = styled.button`
+  height: 100%;
+  padding: 0 15px;
+  border: 0;
+  outline: 0;
+  border-left: solid 2px black;
+  border-radius: 0 30px 30px 0;
+  background-color: #353b48;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  cursor: pointer;
   
-  :active{
-    background-color: RGBA(251, 201, 38, 0.9);
-    transform: translateX(4px);
-  }
   :disabled{
     color: grey;
-    background-color: RGBA(251, 201, 38, 0.3);
   }
-  
-  @media${device.tablet}{
-  font-size: 25px;
-}
-@device${device.laptop} {
-  border-width: 3px;
-}
 `
 
 export const AddCity = (): JSX.Element => {
@@ -80,7 +69,7 @@ export const AddCity = (): JSX.Element => {
             />
             <Button
                 disabled={!city}
-                onClick={cityHandler}>Check
+                onClick={cityHandler}><FaSearch></FaSearch>
             </Button>
         </Form>
     )

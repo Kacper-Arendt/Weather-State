@@ -31,9 +31,12 @@ const GlobalStyle = createGlobalStyle`
 const Header = styled.header`
   display: grid;
   grid-template-rows: 1;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  align-items: center;
   border-bottom: 2px solid black;
   background-color: rgba( 136, 140, 140, .6);
+  
   
   @media${device.laptop}{
   border-width: 4px;
