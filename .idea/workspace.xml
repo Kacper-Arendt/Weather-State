@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8477c59f-a42a-4e75-bf8a-bf28a0360b84" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/Models/MediaQueries.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/AddCity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/AddCity.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Cities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Cities.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/City.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/City.tsx" afterDir="false" />
     </list>
@@ -72,7 +72,7 @@
       <workItem from="1623217187355" duration="15974000" />
       <workItem from="1623302781196" duration="62000" />
       <workItem from="1623302860250" duration="54000" />
-      <workItem from="1623302930980" duration="26200000" />
+      <workItem from="1623302930980" duration="35314000" />
     </task>
     <servers />
   </component>

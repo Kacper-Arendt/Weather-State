@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useAppDispatch} from "../hooks";
 import styled from "styled-components";
-import {AiFillDelete, AiOutlineDelete} from "react-icons/ai";
+import {AiOutlineDelete} from "react-icons/ai";
 
 import {removeCity, AddFetchedData} from '../../redux/city/citySlice'
 import {IFetchedApiData, IProps} from '../Models/City'
@@ -17,19 +17,33 @@ const Wrapper = styled.div`
   font-size: 15px;
 
 @media${device.mobileM} {
-  width: 330px;
+  width: 300px;
   font-size: 17px;
+} @media${device.tablet} {
+  width: 550px;
+  font-size: 21px;
+  margin-bottom: 40px;
+}@media${device.laptop}{
+  width: 700px;
+}
+@media${device.laptopL}{
+  width: 550px;
 }
 `
 
 const Header = styled.header`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  display: grid;
+  grid-template-rows: 1;
+  grid-template-columns: 1fr 3fr 1fr;
+  justify-content: space-between;
   align-content: center;
   align-items: center;
   width: 100%;
   background-color: rgba(115, 86, 76, .8);
+
+  h2 {
+    margin: 0 5px;
+  }
 
   img {
     width: 40px;
@@ -37,10 +51,14 @@ const Header = styled.header`
 
 @media${device.mobileM} {
   img {
-    margin-right: 100px;
     width: 45px;
   }
-}
+
+@media${device.tablet} {
+  img {
+    width: 65px;
+  }
+}}
 `
 
 const WeatherData = styled.div`
@@ -54,9 +72,21 @@ const WeatherData = styled.div`
 `
 
 const Button = styled.button`
-  background-color: transparent;
-  border: none;
-  margin-left: 20px;
+  justify-self: center;
+  padding: 2px 2px;
+  width: 50px;
+  border: solid black 2px;
+  border-radius: 2em;
+  background-color: white;
+  transition: all 0.5s;
+  font-size: 3vh;
+  
+  :hover {
+    text-shadow: 0 0 2em rgba(255, 255, 255, 1);
+    background-color: #D93030;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+  }
 `
 
 export const City = (props: IProps) => {
@@ -96,7 +126,7 @@ export const City = (props: IProps) => {
                         <h2>{apiData.name} </h2>
                         <img src={icon} alt="weather icon"/>
                         <Button
-                            onClick={() => removeCityHandler(props.id)}><AiOutlineDelete size="24"/>
+                            onClick={() => removeCityHandler(props.id)}><AiOutlineDelete/>
                         </Button>
                     </Header>
                     <WeatherData>

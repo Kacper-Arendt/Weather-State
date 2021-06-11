@@ -3,7 +3,7 @@ import styled, {createGlobalStyle} from 'styled-components'
 
 import {AddCity} from "./app/components/AddCity";
 import {Cities} from "./app/components/Cities";
-import { device } from './app/Models/MediaQueries';
+import {device} from './app/Models/MediaQueries';
 import background from './images/background.jpg';
 
 const GlobalStyle = createGlobalStyle`
@@ -29,15 +29,28 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Header = styled.header`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 1;
+  grid-template-columns: 1fr 2fr;
   border-bottom: 2px solid black;
+  background-color: rgba( 136, 140, 140, .6);
+  
+  @media${device.laptop}{
+  border-width: 4px;
+}
+  
 `
 const H1 = styled.h1`
   font-size: 18px;
   letter-spacing: 1px;
   padding: 5px 0 2px 7px;
+  margin-left: 10px;
+
+@media${device.tablet} {
+  font-size: 30px;
+} @media${device.laptop} {
+  font-size: 35px;
+}
 `
 
 function App() {
