@@ -4,6 +4,7 @@ import {useAppSelector} from "../hooks";
 
 import {City} from "./City";
 import {device} from '../Models/MediaQueries'
+import {Status} from '../Models/App';
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,14 +15,13 @@ const Wrapper = styled.div`
 
 @media${device.mobileM} {
   margin-top: 40px;
-}
-@media${device.laptopL}{
+} @media${device.laptopL} {
   flex-direction: row;
 }
 `
 
 export const Cities = () => {
-    const {cities} = useAppSelector(state => state)
+    const {cities, app} = useAppSelector(state => state)
 
     return (
         <Wrapper>
