@@ -17,11 +17,12 @@ const Wrapper = styled.div`
   color: white;
   font-size: 15px;
   transition: all .2s ease-in-out;
-  
-  :hover{
-    button{
+
+  :hover {
+    button {
       visibility: visible;
     }
+
     transform: scale(1.01);
   }
 
@@ -33,7 +34,7 @@ const Wrapper = styled.div`
   font-size: 21px;
   margin-bottom: 40px;
   border-width: 3px;
-}  @media${device.laptopL} {
+} @media${device.laptopL} {
   width: 550px;
 }
 `
@@ -46,7 +47,7 @@ const Header = styled.header`
   align-content: center;
   align-items: center;
   width: 100%;
-  background-color: rgba(157,118,61,0.8);
+  background-color: rgba(157, 118, 61, 0.8);
 
   h2 {
     margin: 0 5px;
