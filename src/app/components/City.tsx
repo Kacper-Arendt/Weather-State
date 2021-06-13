@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {AiOutlineDelete} from "react-icons/ai";
 
 import {removeCity, AddFetchedData} from '../../redux/city/citySlice';
-import {changeStatus} from '../../redux/appSlice';
+import {changeStatus, setMessage} from '../../redux/appSlice';
 import {IFetchedApiData, IProps} from '../Models/City';
 import {device} from '../Models/MediaQueries';
 import {Status} from "../Models/App";
@@ -125,6 +125,7 @@ export const City = (props: IProps) => {
                 if (data.cod == 404) {
                     setError(data.message);
                     dispatch(changeStatus(Status.Idle))
+                    dispatch(setMessage(data.message))
                     return;
                 } else
                     setApiData(data)
