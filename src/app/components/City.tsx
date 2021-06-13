@@ -3,9 +3,11 @@ import {useAppDispatch} from "../hooks";
 import styled from "styled-components";
 import {AiOutlineDelete} from "react-icons/ai";
 
-import {removeCity, AddFetchedData} from '../../redux/city/citySlice'
-import {IFetchedApiData, IProps} from '../Models/City'
-import {device} from '../Models/MediaQueries'
+import {removeCity, AddFetchedData} from '../../redux/city/citySlice';
+import {changeStatus, setMessage} from '../../redux/appSlice';
+import {IFetchedApiData, IProps} from '../Models/City';
+import {device} from '../Models/MediaQueries';
+import {Status} from "../Models/App";
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,11 +19,12 @@ const Wrapper = styled.div`
   color: white;
   font-size: 15px;
   transition: all .2s ease-in-out;
-  
-  :hover{
-    button{
+
+  :hover {
+    button {
       visibility: visible;
     }
+
     transform: scale(1.01);
   }
 
@@ -33,7 +36,7 @@ const Wrapper = styled.div`
   font-size: 21px;
   margin-bottom: 40px;
   border-width: 3px;
-}  @media${device.laptopL} {
+} @media${device.laptopL} {
   width: 550px;
 }
 `
@@ -46,7 +49,7 @@ const Header = styled.header`
   align-content: center;
   align-items: center;
   width: 100%;
-  background-color: rgba(157,118,61,0.8);
+  background-color: rgba(157, 118, 61, 0.8);
 
   h2 {
     margin: 0 5px;
@@ -115,15 +118,18 @@ export const City = (props: IProps) => {
     }
 
     useEffect(() => {
+        dispatch(changeStatus(Status.Fetching))
         fetch(apiUrl)
             .then((res) => res.json())
             .then((data) => {
                 if (data.cod == 404) {
                     setError(data.message);
+                    dispatch(changeStatus(Status.Idle))
+                    dispatch(setMessage(data.message))
                     return;
                 } else
                     setApiData(data)
-                dispatch(AddFetchedData(data))
+                dispatch(AddFetchedData(data) && changeStatus(Status.Idle))
             })
             .catch((error) => {
                 console.log(error)

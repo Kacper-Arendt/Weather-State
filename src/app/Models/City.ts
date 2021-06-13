@@ -2,6 +2,7 @@
 export interface ICity {
     id: string,
     searchedCity: string,
+    isFetching?: boolean,
     fetchedData: IFetchedApiData
 }
 
