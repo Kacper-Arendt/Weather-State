@@ -38,7 +38,7 @@ const Header = styled.header`
 @media${device.tablet} {
   border-width: 4px;
 } @media${device.laptop} {
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 `
 const H1 = styled.h1`

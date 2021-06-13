@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8477c59f-a42a-4e75-bf8a-bf28a0360b84" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/components/UI/Popup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Cities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Cities.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/City.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/City.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/AddCity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/AddCity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/UI/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/UI/Popup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/UI/Spinner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/UI/Spinner.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/appSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/appSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +83,7 @@
       <workItem from="1623302930980" duration="37446000" />
       <workItem from="1623415560536" duration="4395000" />
       <workItem from="1623531674951" duration="7629000" />
-      <workItem from="1623571604849" duration="10485000" />
+      <workItem from="1623571604849" duration="11303000" />
     </task>
     <servers />
   </component>

@@ -13,7 +13,7 @@ export const appSlice = createSlice({
         },
         setMessage: (state, action) => {
             state.message = action.payload
-        }
+        },
     },
 });
 

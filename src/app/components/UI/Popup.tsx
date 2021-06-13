@@ -28,12 +28,12 @@ const Div = styled.div`
   }
 `
 
-interface props {
+interface IProps {
     content?: string,
     handleClose?: () => void
 }
 
-export const Popup = (props: props) => {
+export const Popup = (props: IProps): JSX.Element => {
     return (
         <Div onClick={props.handleClose}>
             <div>

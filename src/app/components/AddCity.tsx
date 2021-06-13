@@ -9,6 +9,7 @@ import {Spinner} from './UI/Spinner';
 import {Status} from '../Models/App';
 
 const Form = styled.form`
+  justify-content: center;
   display: flex;
   flex-direction: row;
   height: 32px;
@@ -25,7 +26,8 @@ const Form = styled.form`
   width: 500px;
   height: 50px;
 } @media${device.laptop} {
-  justify-self: left;
+  justify-self: center;
+  margin-right: 0;
 }
 `
 
