@@ -3,9 +3,11 @@ import {useAppDispatch} from "../hooks";
 import styled from "styled-components";
 import {AiOutlineDelete} from "react-icons/ai";
 
-import {removeCity, AddFetchedData} from '../../redux/city/citySlice'
-import {IFetchedApiData, IProps} from '../Models/City'
-import {device} from '../Models/MediaQueries'
+import {removeCity, AddFetchedData} from '../../redux/city/citySlice';
+import {changeStatus} from '../../redux/appSlice';
+import {IFetchedApiData, IProps} from '../Models/City';
+import {device} from '../Models/MediaQueries';
+import {Status} from "../Models/App";
 
 const Wrapper = styled.div`
   display: flex;
@@ -116,15 +118,17 @@ export const City = (props: IProps) => {
     }
 
     useEffect(() => {
+        dispatch(changeStatus(Status.Fetching))
         fetch(apiUrl)
             .then((res) => res.json())
             .then((data) => {
                 if (data.cod == 404) {
                     setError(data.message);
+                    dispatch(changeStatus(Status.Idle))
                     return;
                 } else
                     setApiData(data)
-                dispatch(AddFetchedData(data))
+                dispatch(AddFetchedData(data) && changeStatus(Status.Idle))
             })
             .catch((error) => {
                 console.log(error)

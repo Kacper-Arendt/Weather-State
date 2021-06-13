@@ -1,11 +1,12 @@
 import React, {useState} from "react";
-import styled from 'styled-components'
+import styled from 'styled-components';
 import {FaSearch} from "react-icons/fa";
 
 import {useAppDispatch, useAppSelector} from "../hooks";
 import {addCity} from "../../redux/city/citySlice";
-import {device} from '../Models/MediaQueries'
-import {Spinner} from './UI/Spinner'
+import {device} from '../Models/MediaQueries';
+import {Spinner} from './UI/Spinner';
+import {Status} from '../Models/App';
 
 const Form = styled.form`
   display: flex;
@@ -47,7 +48,7 @@ const Button = styled.button`
   height: 100%;
   padding: 0 15px;
   outline: 0;
-  border-radius: 0 30px 30px 0;  
+  border-radius: 0 30px 30px 0;
   border: none;
   background-color: #353b48;
   color: white;
@@ -61,6 +62,7 @@ const Button = styled.button`
 `
 
 export const AddCity = (): JSX.Element => {
+    const {app} = useAppSelector(state => state);
     const [city, setCity] = useState<string>('');
     const dispatch = useAppDispatch()
 
@@ -77,11 +79,11 @@ export const AddCity = (): JSX.Element => {
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
             />
-                <Button
-                    disabled={!city}
-                    onClick={cityHandler}>
-                    {true ? <FaSearch></FaSearch> : <Spinner /> }
-                </Button>
+            <Button
+                disabled={!city}
+                onClick={cityHandler}>
+                {app.status === Status.Fetching ? <Spinner/> : <FaSearch></FaSearch>}
+            </Button>
         </Form>
     )
 }
