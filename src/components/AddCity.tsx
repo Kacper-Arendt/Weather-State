@@ -2,11 +2,11 @@ import React, {useState} from "react";
 import styled from 'styled-components';
 import {FaSearch} from "react-icons/fa";
 
-import {useAppDispatch, useAppSelector} from "../hooks";
-import {addCity} from "../../redux/city/citySlice";
+import {useAppDispatch, useAppSelector} from "../redux/hooks";
+import {addCity} from "../redux/city/citySlice";
 import {device} from '../Models/MediaQueries';
 import {Spinner} from './UI/Spinner';
-import {Status} from '../Models/App';
+import {Status} from '..//Models/App';
 
 const Form = styled.form`
   justify-content: center;

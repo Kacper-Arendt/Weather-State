@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const Div = styled.div`
   position: fixed;

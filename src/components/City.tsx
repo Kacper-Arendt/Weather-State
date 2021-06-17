@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
-import {useAppDispatch} from "../hooks";
+import {useAppDispatch, useAppSelector} from "../redux/hooks";
 import styled from "styled-components";
-import {AiOutlineDelete} from "react-icons/ai";
+import {AiOutlineDelete, AiFillStar, AiOutlineStar} from "react-icons/ai";
 
-import {removeCity, AddFetchedData} from '../../redux/city/citySlice';
-import {changeStatus, setMessage} from '../../redux/appSlice';
-import {IFetchedApiData, IProps} from '../Models/City';
+import {removeCity, AddFetchedData, addToFavorites} from '../redux/city/citySlice';
+import {changeStatus, setMessage} from '../redux/appSlice';
+import {ICity, IFetchedApiData, IProps} from '../Models/City';
 import {device} from '../Models/MediaQueries';
 import {Status} from "../Models/App";
 
@@ -87,7 +87,7 @@ const Button = styled.button`
   visibility: hidden;
   justify-self: center;
   padding: 2px 2px;
-  width: 50px;
+  width: 35px;
   border: solid black 2px;
   border-radius: 2em;
   background-color: white;
@@ -104,17 +104,34 @@ const Button = styled.button`
   }
 `
 
+
 export const City = (props: IProps) => {
     const dispatch = useAppDispatch();
+    const {cities, app} = useAppSelector(state => state)
     const [apiData, setApiData] = useState<IFetchedApiData>();
     const [error, setError] = useState();
+    const [favorite, setFavorite] = useState(false);
 
     const apiKey = process.env["REACT_APP_API_KEY"];
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.name}&units=metric&appid=${apiKey}`;
+    const apiUrl =
+        `https://api.openweathermap.org/data/2.5/weather?q=${props.name}&units=metric&&exclude=hourly&appid=${apiKey}`;
     const icon = `http://openweathermap.org/img/wn/${apiData?.weather[0].icon}.png`
 
     const removeCityHandler = (id: string): void => {
         dispatch(removeCity(id))
+    }
+
+
+
+    const addToFav = () => {
+        setFavorite(true);
+    }
+
+    const removeFromFav = () => {
+        setFavorite(false);
+        if (apiData) {
+            localStorage.removeItem(`favorite ${apiData.name}`)
+        }
     }
 
     useEffect(() => {
@@ -143,9 +160,17 @@ export const City = (props: IProps) => {
                     <Header>
                         <h2>{apiData.name} </h2>
                         <img src={icon} alt="weather icon"/>
-                        <Button
-                            onClick={() => removeCityHandler(props.id)}><AiOutlineDelete/>
-                        </Button>
+                        <div>
+                            <Button
+                            > {favorite ?
+                                <AiFillStar onClick={removeFromFav}/>
+                                :
+                                <AiOutlineStar onClick={addToFav}/>}
+                            </Button>
+                            <Button
+                                onClick={() => removeCityHandler(props.id)}><AiOutlineDelete/>
+                            </Button>
+                        </div>
                     </Header>
                     <WeatherData>
                         <p>Temp: {`${apiData.main.temp} °C`}</p>

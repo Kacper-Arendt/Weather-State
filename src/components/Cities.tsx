@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
-import {useAppDispatch, useAppSelector} from "../hooks";
+import {useAppDispatch, useAppSelector} from "../redux/hooks";
 
 import {City} from "./City";
 import {device} from '../Models/MediaQueries'
 import {Status} from '../Models/App';
+import {ICity} from '../Models/City';
 import {Popup} from './UI/Popup';
-import {setMessage} from '../../redux/appSlice';
+import {setMessage} from '../redux/appSlice';
+import {useEffect} from "react";
 
 const Wrapper = styled.div`
   display: flex;
@@ -40,9 +42,11 @@ export const Cities = () => {
                 <City
                     key={city.id}
                     id={city.id}
+                    favorites={city.favorites}
                     name={city.searchedCity}
                 />
             )}
+            {cities.length < 1 && <h1>Lets see whats going on there</h1>}
         </Wrapper>
     )
 }

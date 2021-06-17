@@ -1,7 +1,7 @@
 import {configureStore, ThunkAction, Action} from '@reduxjs/toolkit';
 
-import cityReducer from '../redux/city/citySlice';
-import appReducer from '../redux/appSlice';
+import cityReducer from './city/citySlice';
+import appReducer from './appSlice';
 
 export const store = configureStore({
     reducer: {

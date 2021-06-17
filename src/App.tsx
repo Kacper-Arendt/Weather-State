@@ -1,30 +1,35 @@
 import React from 'react';
 import styled, {createGlobalStyle} from 'styled-components'
 
-import {AddCity} from "./app/components/AddCity";
-import {Cities} from "./app/components/Cities";
-import {device} from './app/Models/MediaQueries';
-import background from './images/background.jpg';
+import {AddCity} from "./components/AddCity";
+import {Cities} from "./components/Cities";
+import {device} from './Models/MediaQueries';
+import background from './images/backgroundEarth.jpg';
 
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;;
   }
 
   html {
     height: 100%;
     width: 100%;
+    background: url(${background});
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    
+  @media${device.laptop} {
+    background-position: initial;
+  }
   }
 
   body {
-    background-image: url(${background});
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    font-family: 'Roboto', sans-serif;
   }
 `
 
