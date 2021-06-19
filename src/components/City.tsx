@@ -12,33 +12,22 @@ import {Status} from "../Models/App";
 const Wrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
-  width: 220px;
-  margin: 20px;
-  border: solid black 2px;
+  width: 23rem;
+  height: 22rem;
+  margin: 2rem;
+  border: solid black .2rem;
   background-color: rgba(53, 59, 72, .9);
   color: white;
-  font-size: 15px;
+  font-size: 1.5rem;
   transition: all .2s ease-in-out;
 
   :hover {
     button {
       visibility: visible;
     }
-
     transform: scale(1.01);
   }
-
-@media${device.mobileM} {
-  width: 300px;
-  font-size: 17px;
-} @media${device.tablet} {
-  width: 550px;
-  font-size: 21px;
-  margin-bottom: 40px;
-  border-width: 3px;
-} @media${device.laptopL} {
-  width: 550px;
-}
+  
 `
 
 const Header = styled.header`
@@ -49,46 +38,36 @@ const Header = styled.header`
   align-content: center;
   align-items: center;
   width: 100%;
+  max-height: 5rem;
   background-color: rgba(157, 118, 61, 0.8);
 
   h2 {
-    margin: 0 5px;
-    padding-left: 10px;
+    margin: 0 .5rem;
+    padding-left: 1rem;
   }
 
   img {
-    width: 40px;
+    width: 5rem;
   }
 
-@media${device.mobileM} {
-  img {
-    width: 45px;
-  }
-
-@media${device.tablet} {
-  img {
-    width: 65px;
-  }
-}
-}
 `
 
 const WeatherData = styled.div`
   width: 100%;
-  padding: 10px 0 10px 15px;
+  padding: 1rem 0 1rem 1.5rem;
 
   p {
-    letter-spacing: 1px;
-    margin-bottom: 4px;
+    letter-spacing: .25rem;
+    margin-bottom: .6rem;
   }
 `
 
 const Button = styled.button`
   visibility: hidden;
   justify-self: center;
-  padding: 2px 2px;
-  width: 35px;
-  border: solid black 2px;
+  padding: .2rem .2rem;
+  width: 3.5rem;
+  border: solid black .2rem;
   border-radius: 2em;
   background-color: white;
   transition: all 0.5s;

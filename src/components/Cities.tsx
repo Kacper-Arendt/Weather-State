@@ -12,15 +12,16 @@ import {useEffect} from "react";
 
 const Wrapper = styled.div`
   display: flex;
+  width: 30rem;
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  margin-top: 1rem;
 
-@media${device.mobileM} {
-  margin-top: 40px;
-} @media${device.laptopL} {
+ @media${device.tablet} {
   flex-direction: row;
+  width: 60rem;
 }
 `
 
