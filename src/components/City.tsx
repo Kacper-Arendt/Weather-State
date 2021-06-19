@@ -19,15 +19,12 @@ const Wrapper = styled.div`
   background-color: rgba(53, 59, 72, .9);
   color: white;
   font-size: 1.5rem;
-  transition: all .2s ease-in-out;
+  transition: all 0.5s;
 
   :hover {
-    button {
-      visibility: visible;
-    }
     transform: scale(1.01);
+    box-shadow: 2px 2px 1.5rem #000;
   }
-  
 `
 
 const Header = styled.header`
@@ -63,7 +60,6 @@ const WeatherData = styled.div`
 `
 
 const Button = styled.button`
-  visibility: hidden;
   justify-self: center;
   padding: .2rem .2rem;
   width: 3.5rem;

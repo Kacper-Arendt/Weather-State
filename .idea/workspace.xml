@@ -7,7 +7,6 @@
     <list default="true" id="8477c59f-a42a-4e75-bf8a-bf28a0360b84" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddCity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddCity.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Cities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cities.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/City.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/City.tsx" afterDir="false" />
     </list>
@@ -15,6 +14,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="style_background" />
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="main" />
@@ -92,6 +94,7 @@
       <workItem from="1623934032299" duration="5671000" />
       <workItem from="1623958429071" duration="4666000" />
       <workItem from="1624135810873" duration="133000" />
+      <workItem from="1624140478403" duration="361000" />
     </task>
     <servers />
   </component>
