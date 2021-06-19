@@ -3,12 +3,15 @@ export interface ICity {
     id: string,
     searchedCity: string,
     isFetching?: boolean,
-    fetchedData: IFetchedApiData
+    fetchedData: IFetchedApiData,
+    favorites: boolean
 }
 
 export interface IProps {
     id: string,
     name: string,
+    favorites: boolean,
+    addFav?: () => void
 }
 
 export interface IFetchedApiData {

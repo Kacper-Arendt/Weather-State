@@ -1,44 +1,33 @@
 import React, {useEffect, useState} from "react";
-import {useAppDispatch} from "../hooks";
+import {useAppDispatch, useAppSelector} from "../redux/hooks";
 import styled from "styled-components";
-import {AiOutlineDelete} from "react-icons/ai";
+import {AiOutlineDelete, AiFillStar, AiOutlineStar} from "react-icons/ai";
 
-import {removeCity, AddFetchedData} from '../../redux/city/citySlice';
-import {changeStatus, setMessage} from '../../redux/appSlice';
-import {IFetchedApiData, IProps} from '../Models/City';
+import {removeCity, AddFetchedData, addToFavorites} from '../redux/city/citySlice';
+import {changeStatus, setMessage} from '../redux/appSlice';
+import {ICity, IFetchedApiData, IProps} from '../Models/City';
 import {device} from '../Models/MediaQueries';
 import {Status} from "../Models/App";
 
 const Wrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
-  width: 220px;
-  margin: 20px;
-  border: solid black 2px;
+  width: 23rem;
+  height: 22rem;
+  margin: 2rem;
+  border: solid black .2rem;
   background-color: rgba(53, 59, 72, .9);
   color: white;
-  font-size: 15px;
+  font-size: 1.5rem;
   transition: all .2s ease-in-out;
 
   :hover {
     button {
       visibility: visible;
     }
-
     transform: scale(1.01);
   }
-
-@media${device.mobileM} {
-  width: 300px;
-  font-size: 17px;
-} @media${device.tablet} {
-  width: 550px;
-  font-size: 21px;
-  margin-bottom: 40px;
-  border-width: 3px;
-} @media${device.laptopL} {
-  width: 550px;
-}
+  
 `
 
 const Header = styled.header`
@@ -49,46 +38,36 @@ const Header = styled.header`
   align-content: center;
   align-items: center;
   width: 100%;
+  max-height: 5rem;
   background-color: rgba(157, 118, 61, 0.8);
 
   h2 {
-    margin: 0 5px;
-    padding-left: 10px;
+    margin: 0 .5rem;
+    padding-left: 1rem;
   }
 
   img {
-    width: 40px;
+    width: 5rem;
   }
 
-@media${device.mobileM} {
-  img {
-    width: 45px;
-  }
-
-@media${device.tablet} {
-  img {
-    width: 65px;
-  }
-}
-}
 `
 
 const WeatherData = styled.div`
   width: 100%;
-  padding: 10px 0 10px 15px;
+  padding: 1rem 0 1rem 1.5rem;
 
   p {
-    letter-spacing: 1px;
-    margin-bottom: 4px;
+    letter-spacing: .25rem;
+    margin-bottom: .6rem;
   }
 `
 
 const Button = styled.button`
   visibility: hidden;
   justify-self: center;
-  padding: 2px 2px;
-  width: 50px;
-  border: solid black 2px;
+  padding: .2rem .2rem;
+  width: 3.5rem;
+  border: solid black .2rem;
   border-radius: 2em;
   background-color: white;
   transition: all 0.5s;
@@ -104,17 +83,34 @@ const Button = styled.button`
   }
 `
 
+
 export const City = (props: IProps) => {
     const dispatch = useAppDispatch();
+    const {cities, app} = useAppSelector(state => state)
     const [apiData, setApiData] = useState<IFetchedApiData>();
     const [error, setError] = useState();
+    const [favorite, setFavorite] = useState(false);
 
     const apiKey = process.env["REACT_APP_API_KEY"];
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.name}&units=metric&appid=${apiKey}`;
+    const apiUrl =
+        `https://api.openweathermap.org/data/2.5/weather?q=${props.name}&units=metric&&exclude=hourly&appid=${apiKey}`;
     const icon = `http://openweathermap.org/img/wn/${apiData?.weather[0].icon}.png`
 
     const removeCityHandler = (id: string): void => {
         dispatch(removeCity(id))
+    }
+
+
+
+    const addToFav = () => {
+        setFavorite(true);
+    }
+
+    const removeFromFav = () => {
+        setFavorite(false);
+        if (apiData) {
+            localStorage.removeItem(`favorite ${apiData.name}`)
+        }
     }
 
     useEffect(() => {
@@ -143,9 +139,17 @@ export const City = (props: IProps) => {
                     <Header>
                         <h2>{apiData.name} </h2>
                         <img src={icon} alt="weather icon"/>
-                        <Button
-                            onClick={() => removeCityHandler(props.id)}><AiOutlineDelete/>
-                        </Button>
+                        <div>
+                            <Button
+                            > {favorite ?
+                                <AiFillStar onClick={removeFromFav}/>
+                                :
+                                <AiOutlineStar onClick={addToFav}/>}
+                            </Button>
+                            <Button
+                                onClick={() => removeCityHandler(props.id)}><AiOutlineDelete/>
+                            </Button>
+                        </div>
                     </Header>
                     <WeatherData>
                         <p>Temp: {`${apiData.main.temp} °C`}</p>

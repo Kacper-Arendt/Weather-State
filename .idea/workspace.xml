@@ -6,12 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="8477c59f-a42a-4e75-bf8a-bf28a0360b84" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddCity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddCity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Cities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cities.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/City.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/City.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -41,7 +47,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../todo-app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -51,6 +57,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/redux/" />
+      <recent name="$PROJECT_DIR$/src/" />
       <recent name="$PROJECT_DIR$/" />
       <recent name="$PROJECT_DIR$/src/app/components/UI" />
     </key>
@@ -79,6 +87,11 @@
       <workItem from="1623302930980" duration="37446000" />
       <workItem from="1623415560536" duration="4395000" />
       <workItem from="1623531674951" duration="606000" />
+      <workItem from="1623650316445" duration="79000" />
+      <workItem from="1623650398164" duration="29826000" />
+      <workItem from="1623934032299" duration="5671000" />
+      <workItem from="1623958429071" duration="4666000" />
+      <workItem from="1624135810873" duration="133000" />
     </task>
     <servers />
   </component>

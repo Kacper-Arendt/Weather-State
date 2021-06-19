@@ -1,5 +1,5 @@
 import {createSlice, nanoid, PayloadAction} from "@reduxjs/toolkit";
-import {ICity, IFetchedApiData} from "../../app/Models/City";
+import {ICity, IFetchedApiData} from "../../Models/City";
 
 const initialState = [] as ICity[]
 
@@ -15,6 +15,7 @@ export const citySlice = createSlice({
                 payload: {
                     id: nanoid(),
                     searchedCity,
+                    favorites: false,
                 } as ICity
             }),
         },
@@ -24,10 +25,13 @@ export const citySlice = createSlice({
         },
         AddFetchedData(state, action: PayloadAction<IFetchedApiData>) {
             state.findIndex((city) => city.fetchedData = action.payload)
-        }
+        },
+        addToFavorites:((state) => {
+            state.findIndex((city) => {city.favorites = !city.favorites})
+        })
     },
 });
 
-export const {addCity, removeCity, AddFetchedData} = citySlice.actions;
+export const {addCity, removeCity, AddFetchedData, addToFavorites} = citySlice.actions;
 
 export default citySlice.reducer;
