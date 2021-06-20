@@ -1,16 +1,17 @@
-
 export interface ICity {
     id: string,
     searchedCity: string,
     isFetching?: boolean,
     fetchedData: IFetchedApiData,
-    favorites: boolean
+    favorites: boolean,
+    active: boolean
 }
 
 export interface IProps {
     id: string,
     name: string,
     favorites: boolean,
+    active: boolean,
     addFav?: () => void
 }
 

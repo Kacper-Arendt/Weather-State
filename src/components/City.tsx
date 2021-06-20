@@ -3,11 +3,12 @@ import {useAppDispatch, useAppSelector} from "../redux/hooks";
 import styled from "styled-components";
 import {AiOutlineDelete, AiFillStar, AiOutlineStar} from "react-icons/ai";
 
-import {removeCity, AddFetchedData, addToFavorites} from '../redux/city/citySlice';
+import {removeCity, AddFetchedData, addToFavorites, setActive} from '../redux/city/citySlice';
 import {changeStatus, setMessage} from '../redux/appSlice';
 import {ICity, IFetchedApiData, IProps} from '../Models/City';
 import {device} from '../Models/MediaQueries';
 import {Status} from "../Models/App";
+import {CityMenu} from "./UI/CityMenu";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,15 +20,12 @@ const Wrapper = styled.div`
   background-color: rgba(53, 59, 72, .9);
   color: white;
   font-size: 1.5rem;
-  transition: all .2s ease-in-out;
+  transition: all 0.5s;
+  position: relative;
 
   :hover {
-    button {
-      visibility: visible;
-    }
-    transform: scale(1.01);
+    box-shadow: 2px 2px 1.5rem #000;
   }
-  
 `
 
 const Header = styled.header`
@@ -49,7 +47,16 @@ const Header = styled.header`
   img {
     width: 5rem;
   }
+`
 
+const A = styled.a`
+  position: absolute;
+  top: .8rem;
+  right: .5rem;
+  width: 4.2rem;
+  height: 3.5rem;
+  z-index: 200;
+  background-color: transparent;
 `
 
 const WeatherData = styled.div`
@@ -61,28 +68,6 @@ const WeatherData = styled.div`
     margin-bottom: .6rem;
   }
 `
-
-const Button = styled.button`
-  visibility: hidden;
-  justify-self: center;
-  padding: .2rem .2rem;
-  width: 3.5rem;
-  border: solid black .2rem;
-  border-radius: 2em;
-  background-color: white;
-  transition: all 0.5s;
-  font-size: 3vh;
-  webkit-transition: visibility 0s, opacity 0.5s linear;
-  transition: visibility 0.2s, opacity 0.5s linear;
-
-  :hover {
-    text-shadow: 0 0 2em rgba(255, 255, 255, 1);
-    background-color: #D93030;
-    color: #FFFFFF;
-    border-color: #FFFFFF;
-  }
-`
-
 
 export const City = (props: IProps) => {
     const dispatch = useAppDispatch();
@@ -99,11 +84,12 @@ export const City = (props: IProps) => {
     const removeCityHandler = (id: string): void => {
         dispatch(removeCity(id))
     }
-
-
-
     const addToFav = () => {
         setFavorite(true);
+    }
+
+    const showId = (id: string) => {
+        dispatch(setActive(id))
     }
 
     const removeFromFav = () => {
@@ -135,30 +121,30 @@ export const City = (props: IProps) => {
     const fetchedData = () => {
         if (!error && apiData) {
             return (
-                <Wrapper>
-                    <Header>
-                        <h2>{apiData.name} </h2>
-                        <img src={icon} alt="weather icon"/>
-                        <div>
-                            <Button
-                            > {favorite ?
-                                <AiFillStar onClick={removeFromFav}/>
-                                :
-                                <AiOutlineStar onClick={addToFav}/>}
-                            </Button>
-                            <Button
-                                onClick={() => removeCityHandler(props.id)}><AiOutlineDelete/>
-                            </Button>
-                        </div>
-                    </Header>
-                    <WeatherData>
-                        <p>Temp: {`${apiData.main.temp} °C`}</p>
-                        <p>Conditions: {apiData.weather[0].description} </p>
-                        <p>Wind: {apiData.wind.speed} m/s</p>
-                        <p>Pressure: {`${apiData.main.pressure}  HPa`}</p>
-                        <p>Humidity: {`${apiData.main.humidity}%`}</p>
-                    </WeatherData>
-                </Wrapper>
+                <>
+                    <Wrapper>
+                        <Header>
+                            <h2>{apiData.name} </h2>
+                            <img src={icon} alt="weather icon"/>
+                            <A onClick={() => showId(props.id)}/>
+                            <CityMenu
+                                id={props.id}
+                                favorite={favorite}
+                                active={props.active}
+                                addToFav={() => addToFav()}
+                                removeFromFav={() => removeFromFav()}
+                                removeCityHandler={(id) => removeCityHandler(id)}
+                            />
+                        </Header>
+                        <WeatherData>
+                            <p>Temp: {`${apiData.main.temp} °C`}</p>
+                            <p>Conditions: {apiData.weather[0].description} </p>
+                            <p>Wind: {apiData.wind.speed} m/s</p>
+                            <p>Pressure: {`${apiData.main.pressure}  HPa`}</p>
+                            <p>Humidity: {`${apiData.main.humidity}%`}</p>
+                        </WeatherData>
+                    </Wrapper>
+                </>
             )
         }
     }
@@ -169,3 +155,4 @@ export const City = (props: IProps) => {
         </>
     )
 }
+

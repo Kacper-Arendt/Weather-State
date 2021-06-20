@@ -8,6 +8,7 @@ const Div = styled.div`
   height: 100vh;
   top: 0;
   left: 0;
+  z-index: 200;
 
   div {
     width: 55%;

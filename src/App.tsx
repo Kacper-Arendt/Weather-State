@@ -43,7 +43,7 @@ const Header = styled.header`
   align-items: center;
   border-bottom: .2rem solid black;
   background-color: rgba(136, 140, 140, .6);
-  
+
 @media${device.tablet} {
 } @media${device.tablet} {
   grid-template-columns: 1fr 1fr 1fr;
@@ -53,8 +53,6 @@ const H1 = styled.h1`
   font-size: 1.8rem;
   letter-spacing: .1rem;
   padding: 5px 0 2px 7px;
-  margin-left: 0.3rem;
-
 `
 
 function App() {
