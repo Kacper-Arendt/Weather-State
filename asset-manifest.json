@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/Weather-State/static/js/main.d21db2c3.chunk.js",
-    "main.js.map": "/Weather-State/static/js/main.d21db2c3.chunk.js.map",
+    "main.js": "/Weather-State/static/js/main.383b3554.chunk.js",
+    "main.js.map": "/Weather-State/static/js/main.383b3554.chunk.js.map",
     "runtime-main.js": "/Weather-State/static/js/runtime-main.8e770936.js",
     "runtime-main.js.map": "/Weather-State/static/js/runtime-main.8e770936.js.map",
-    "static/js/2.fc42ee09.chunk.js": "/Weather-State/static/js/2.fc42ee09.chunk.js",
-    "static/js/2.fc42ee09.chunk.js.map": "/Weather-State/static/js/2.fc42ee09.chunk.js.map",
+    "static/js/2.5afecc56.chunk.js": "/Weather-State/static/js/2.5afecc56.chunk.js",
+    "static/js/2.5afecc56.chunk.js.map": "/Weather-State/static/js/2.5afecc56.chunk.js.map",
     "index.html": "/Weather-State/index.html",
-    "static/js/2.fc42ee09.chunk.js.LICENSE.txt": "/Weather-State/static/js/2.fc42ee09.chunk.js.LICENSE.txt",
-    "static/media/background.dd3ce292.jpg": "/Weather-State/static/media/background.dd3ce292.jpg"
+    "static/js/2.5afecc56.chunk.js.LICENSE.txt": "/Weather-State/static/js/2.5afecc56.chunk.js.LICENSE.txt",
+    "static/media/backgroundEarth.4a4ef648.jpg": "/Weather-State/static/media/backgroundEarth.4a4ef648.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.8e770936.js",
-    "static/js/2.fc42ee09.chunk.js",
-    "static/js/main.d21db2c3.chunk.js"
+    "static/js/2.5afecc56.chunk.js",
+    "static/js/main.383b3554.chunk.js"
   ]
 }
