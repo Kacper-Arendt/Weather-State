@@ -77,6 +77,7 @@ export const Cities = () => {
                     id={city.id}
                     favorites={city.favorites}
                     name={city.searchedCity}
+                    active={city.active}
                 />
             )}
             {cities.length < 1 && <h1>Lets see whats going on there!</h1>}
