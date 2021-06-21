@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import {AiFillStar, AiOutlineDelete, AiOutlineStar} from 'react-icons/ai';
 import styled, {keyframes} from 'styled-components';
-import {setActive} from '../../redux/city/citySlice';
+
+import {setActive, toggleFavorites} from '../../redux/city/citySlice';
+import {addToFavCities, removeFromFav} from '../../redux/appSlice';
+import {useAppDispatch, useAppSelector } from '../../redux/hooks';
 
 interface MenuProps {
     active: boolean
@@ -76,22 +79,38 @@ const BurgerIcon = styled.span<MenuProps>`
 
 export interface IProps {
     id: string,
-    favorite: boolean,
+    name: string
     active: boolean,
     removeFromFav?: () => void,
-    addToFav?: () => void,
+    addToFav?: (id: string) => void,
     removeCityHandler?: (id: string) => void,
 }
 
 export const CityMenu = (props: IProps) => {
+    const dispatch = useAppDispatch();
+    const {cities} = useAppSelector(state => state)
+    const [favorites, setFavorites] = useState<boolean>(false)
+
+    const addToFav = (id: string):void => {
+        dispatch(toggleFavorites(id))
+        setFavorites(true)
+        dispatch(addToFavCities(props.name))
+    }
+
+    const removeFromFavHandler = (): void => {
+        dispatch(removeFromFav(props.name));
+        setFavorites(false)
+    }
+
+
     return (
         <>
             <BurgerIcon active={props.active}></BurgerIcon>
             <Menu active={props.active}>
-                <a>{props.favorite ?
-                    <AiFillStar onClick={props.removeFromFav}/>
+                <a>{favorites ?
+                    <AiFillStar onClick={() => removeFromFavHandler()}/>
                     :
-                    <AiOutlineStar onClick={props.addToFav}/>}
+                    <AiOutlineStar onClick={() => addToFav(props.id)} />}
                 </a>
                 <a onClick={() => props.removeCityHandler!(props.id)}><AiOutlineDelete></AiOutlineDelete></a>
             </Menu>

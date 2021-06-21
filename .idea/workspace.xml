@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8477c59f-a42a-4e75-bf8a-bf28a0360b84" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/UI/CityMenu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2021,_14_54_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_06_2021__14_54__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/App.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/App.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/City.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/City.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cities.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/City.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/City.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Popup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Popup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/CityMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CityMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/appSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/appSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/city/citySlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/city/citySlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +102,7 @@
       <workItem from="1624135810873" duration="133000" />
       <workItem from="1624140478403" duration="5224000" />
       <workItem from="1624176351143" duration="28572000" />
+      <workItem from="1624256502061" duration="11971000" />
     </task>
     <servers />
   </component>

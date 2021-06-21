@@ -12,7 +12,7 @@ export interface IProps {
     name: string,
     favorites: boolean,
     active: boolean,
-    addFav?: () => void
+    addFav?: (id: string) => void
 }
 
 export interface IFetchedApiData {
@@ -28,6 +28,7 @@ export interface IFetchedApiData {
     weather: [{ description: string, humidity: string, icon: string }],
     wind: { speed: number }
 }
+
 export interface IMainWeatherStats {
     feels_like: number,
     humidity: number,
