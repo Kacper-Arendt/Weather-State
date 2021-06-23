@@ -96,9 +96,11 @@ export const CityMenu = (props: IProps): JSX.Element => {
     }, [app.favoritesCities]);
 
     useEffect(() => {
-        let fetchedArray: Array<string> = JSON.parse(localStorage.getItem('favorites')!);
-        if (fetchedArray.includes(props.name)) {
-            addToFav(props.id);
+        if (localStorage.getItem('favorites')) {
+            let fetchedArray: Array<string> = JSON.parse(localStorage.getItem('favorites')!);
+            if (fetchedArray.includes(props.name)) {
+                addToFav(props.id);
+            }
         }
     }, [])
 
