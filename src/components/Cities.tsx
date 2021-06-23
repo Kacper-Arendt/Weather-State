@@ -61,10 +61,12 @@ export const Cities = (): JSX.Element => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        let fetchedArray: Array<string> = JSON.parse(localStorage.getItem('favorites')!);
-        fetchedArray.map(city => {
-            dispatch(addCity(city));
-        })
+        if (localStorage.getItem('favorites')) {
+            let fetchedArray: Array<string> = JSON.parse(localStorage.getItem('favorites')!);
+            fetchedArray.map(city => {
+                dispatch(addCity(city));
+            })
+        }
     }, []);
 
     const popupHandleClose = (): void => {
