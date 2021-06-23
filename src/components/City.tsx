@@ -1,12 +1,10 @@
 import React, {useEffect, useState} from "react";
-import {useAppDispatch, useAppSelector} from "../redux/hooks";
+import {useAppDispatch} from "../redux/hooks";
 import styled from "styled-components";
-import {AiOutlineDelete, AiFillStar, AiOutlineStar} from "react-icons/ai";
 
-import {removeCity, AddFetchedData, toggleFavorites, setActive} from '../redux/city/citySlice';
+import {removeCity, AddFetchedData, setActive} from '../redux/city/citySlice';
 import {changeStatus, setMessage} from '../redux/appSlice';
-import {ICity, IFetchedApiData, IProps} from '../Models/City';
-import {device} from '../Models/MediaQueries';
+import {IFetchedApiData, IProps} from '../Models/City';
 import {Status} from "../Models/App";
 import {CityMenu} from "./UI/CityMenu";
 
@@ -71,7 +69,6 @@ const WeatherData = styled.div`
 
 export const City = (props: IProps) => {
     const dispatch = useAppDispatch();
-    const {cities, app} = useAppSelector(state => state)
     const [apiData, setApiData] = useState<IFetchedApiData>();
     const [error, setError] = useState();
 
@@ -118,6 +115,7 @@ export const City = (props: IProps) => {
                             <CityMenu
                                 id={props.id}
                                 name={apiData.name}
+                                favorites={props.favorites}
                                 active={props.active}
                                 removeCityHandler={(id) => removeCityHandler(id)}
                             />

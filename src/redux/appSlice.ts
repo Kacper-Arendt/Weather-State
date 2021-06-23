@@ -1,7 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 import {IApp, Status} from '../Models/App'
-import { IProps } from '../Models/City';
 
 const initialState = {status: Status.Idle, favoritesCities: []} as IApp;
 

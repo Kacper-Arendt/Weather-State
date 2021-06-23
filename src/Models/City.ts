@@ -12,7 +12,6 @@ export interface IProps {
     name: string,
     favorites: boolean,
     active: boolean,
-    addFav?: (id: string) => void
 }
 
 export interface IFetchedApiData {
