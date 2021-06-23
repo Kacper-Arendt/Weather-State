@@ -1,14 +1,13 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import {useAppDispatch, useAppSelector} from "../redux/hooks";
 import {useEffect} from "react";
 
 import {City} from "./City";
 import {device} from '../Models/MediaQueries'
-import {Status} from '../Models/App';
-import {ICity} from '../Models/City';
 import {Popup} from './UI/Popup';
 import {setMessage} from '../redux/appSlice';
+import {addCity} from "../redux/city/citySlice";
 
 const Wrapper = styled.div`
   display: flex;
@@ -57,11 +56,18 @@ const Wrapper = styled.div`
   }
 `
 
-export const Cities = () => {
+export const Cities = (): JSX.Element => {
     const {cities, app} = useAppSelector(state => state)
     const dispatch = useAppDispatch()
 
-    const popupHandleClose = () => {
+    useEffect(() => {
+        let fetchedArray: Array<string> = JSON.parse(localStorage.getItem('favorites')!);
+        fetchedArray.map(city => {
+            dispatch(addCity(city));
+        })
+    }, []);
+
+    const popupHandleClose = (): void => {
         dispatch(setMessage(null));
     }
 

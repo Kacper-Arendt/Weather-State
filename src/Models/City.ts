@@ -1,7 +1,7 @@
 export interface ICity {
     id: string,
     searchedCity: string,
-    isFetching?: boolean,
+    isFetching: boolean,
     fetchedData: IFetchedApiData,
     favorites: boolean,
     active: boolean
@@ -12,7 +12,6 @@ export interface IProps {
     name: string,
     favorites: boolean,
     active: boolean,
-    addFav?: () => void
 }
 
 export interface IFetchedApiData {
@@ -28,6 +27,7 @@ export interface IFetchedApiData {
     weather: [{ description: string, humidity: string, icon: string }],
     wind: { speed: number }
 }
+
 export interface IMainWeatherStats {
     feels_like: number,
     humidity: number,

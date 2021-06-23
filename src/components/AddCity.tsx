@@ -17,7 +17,7 @@ const Form = styled.form`
   height: 3.2rem;
   margin-right: 1.5rem;
   font-size: 2rem;
-  
+
 @media${device.tablet} {
   justify-self: center;
   margin-right: 0;
@@ -61,9 +61,9 @@ const Button = styled.button`
 export const AddCity = (): JSX.Element => {
     const {app} = useAppSelector(state => state);
     const [city, setCity] = useState<string>('');
-    const dispatch = useAppDispatch()
+    const dispatch = useAppDispatch();
 
-    const cityHandler = (e: React.SyntheticEvent) => {
+    const cityHandler = (e: React.SyntheticEvent): void => {
         e.preventDefault();
         dispatch(addCity(city));
         setCity('');

@@ -55,7 +55,7 @@ const H1 = styled.h1`
   padding: 5px 0 2px 7px;
 `
 
-function App() {
+function App(): JSX.Element {
     return (
         <>
             <GlobalStyle/>
