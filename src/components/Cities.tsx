@@ -56,7 +56,7 @@ const Wrapper = styled.div`
   }
 `
 
-export const Cities = () => {
+export const Cities = (): JSX.Element => {
     const {cities, app} = useAppSelector(state => state)
     const dispatch = useAppDispatch()
 
@@ -67,7 +67,7 @@ export const Cities = () => {
         })
     }, []);
 
-    const popupHandleClose = () => {
+    const popupHandleClose = (): void => {
         dispatch(setMessage(null));
     }
 

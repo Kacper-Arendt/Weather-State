@@ -87,7 +87,7 @@ export interface IProps {
     removeCityHandler: (id: string) => void,
 }
 
-export const CityMenu = (props: IProps) => {
+export const CityMenu = (props: IProps): JSX.Element => {
     const dispatch = useAppDispatch();
     const {app} = useAppSelector(state => state)
 
@@ -97,7 +97,7 @@ export const CityMenu = (props: IProps) => {
 
     useEffect(() => {
         let fetchedArray: Array<string> = JSON.parse(localStorage.getItem('favorites')!);
-        if (fetchedArray.includes(props.name)){
+        if (fetchedArray.includes(props.name)) {
             addToFav(props.id);
         }
     }, [])

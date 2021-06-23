@@ -25,15 +25,15 @@ export const citySlice = createSlice({
             state.splice(index, 1);
         },
         AddFetchedData(state, action: PayloadAction<IFetchedApiData>) {
-            state.findIndex((city) => city.fetchedData = action.payload)
+            state.findIndex((city) => city.fetchedData = action.payload);
         },
-        toggleFavorites: (state, action) => {
+        toggleFavorites: (state, action: PayloadAction<string>) => {
             const index = state.findIndex((city) => city.id === action.payload);
-            state[index].favorites = !state[index].favorites
+            state[index].favorites = !state[index].favorites;
         },
         setActive: (state, action: PayloadAction<string>) => {
             const index = state.findIndex((city) => city.id === action.payload);
-            state[index].active = !state[index].active
+            state[index].active = !state[index].active;
         },
     },
 });

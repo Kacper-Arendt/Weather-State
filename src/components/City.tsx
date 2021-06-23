@@ -67,17 +67,17 @@ const WeatherData = styled.div`
   }
 `
 
-export const City = (props: IProps) => {
+export const City = (props: IProps): JSX.Element => {
     const dispatch = useAppDispatch();
     const [apiData, setApiData] = useState<IFetchedApiData>();
-    const [error, setError] = useState();
+    const [error, setError] = useState<string>();
 
     const apiKey = process.env["REACT_APP_API_KEY"];
-    const apiUrl =
+    const apiUrl: string =
         `https://api.openweathermap.org/data/2.5/weather?q=${props.name}&units=metric&&exclude=hourly&appid=${apiKey}`;
-    const icon = `http://openweathermap.org/img/wn/${apiData?.weather[0].icon}.png`
+    const icon: string = `http://openweathermap.org/img/wn/${apiData?.weather[0].icon}.png`
 
-    const showId = (id: string) => {
+    const showId = (id: string): void => {
         dispatch(setActive(id))
     }
 

@@ -1,5 +1,5 @@
 export interface IApp {
-    status?: Status,
+    status: Status,
     message?: string,
     favoritesCities: Array<string>
 }

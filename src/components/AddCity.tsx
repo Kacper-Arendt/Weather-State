@@ -63,7 +63,7 @@ export const AddCity = (): JSX.Element => {
     const [city, setCity] = useState<string>('');
     const dispatch = useAppDispatch();
 
-    const cityHandler = (e: React.SyntheticEvent) => {
+    const cityHandler = (e: React.SyntheticEvent): void => {
         e.preventDefault();
         dispatch(addCity(city));
         setCity('');

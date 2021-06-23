@@ -1,7 +1,7 @@
 export interface ICity {
     id: string,
     searchedCity: string,
-    isFetching?: boolean,
+    isFetching: boolean,
     fetchedData: IFetchedApiData,
     favorites: boolean,
     active: boolean
