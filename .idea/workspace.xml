@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8477c59f-a42a-4e75-bf8a-bf28a0360b84" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Cities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cities.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/fetchData.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +36,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
-  </component>
   <component name="ProjectId" id="1teo8QbpMHK0tlRa0nevaeF1DMR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -56,7 +55,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Errors" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -104,6 +103,19 @@
       <workItem from="1624381073682" duration="10234000" />
       <workItem from="1624422760750" duration="92000" />
       <workItem from="1624469081456" duration="3704000" />
+      <workItem from="1624727516334" duration="1606000" />
+      <workItem from="1624893983542" duration="3947000" />
+      <workItem from="1624907122321" duration="1071000" />
+      <workItem from="1624946857109" duration="626000" />
+      <workItem from="1625027352751" duration="3732000" />
+      <workItem from="1625115185733" duration="611000" />
+      <workItem from="1625202059921" duration="4192000" />
+      <workItem from="1625401342609" duration="57000" />
+      <workItem from="1625905070255" duration="605000" />
+      <workItem from="1625982550551" duration="15000" />
+      <workItem from="1626085906111" duration="630000" />
+      <workItem from="1626086580291" duration="53000" />
+      <workItem from="1626103195320" duration="565000" />
     </task>
     <servers />
   </component>
@@ -121,6 +133,17 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/redux/city/citySlice.ts</url>
+          <line>40</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

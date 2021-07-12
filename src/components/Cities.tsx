@@ -88,7 +88,7 @@ export const Cities = (): JSX.Element => {
                     active={city.active}
                 />
             )}
-            {cities.length < 1 && <h1>Lets see whats going on there!</h1>}
+            {cities.length < 1 && <h1>Let's check the weather!</h1>}
         </Wrapper>
     )
 }

@@ -19,11 +19,8 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
     width: 100%;
     height: 100%;
-    background: url(${background});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    ${background}-size: cover;
+    background: url(${background}) no-repeat fixed center;
 
   @media${device.mobileM} {
     font-size: 81.25%;
